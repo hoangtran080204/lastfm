@@ -14,9 +14,25 @@ Hi there! The maintainer of this library @rikkit is now mostly a TypeScript + Re
 - To build useful components for Last.fm applications
 - To be the very best, like no-one ever was
 
+## Description
+
+The Inflatable Last.fm .NET SDK is a comprehensive library that provides .NET bindings for the Last.fm REST API. This SDK aims to simplify the process of integrating Last.fm functionality into .NET applications, allowing developers to easily access and manipulate Last.fm data.
+
+## Features
+
+Key features of this SDK include:
+
+- **Complete API Coverage**: Provides bindings for all Last.fm API methods, allowing full access to Last.fm's extensive music data and user information.
+- **Asynchronous Operations**: Utilizes `async/await` patterns for efficient and non-blocking API calls.
+- **Strong Typing**: Offers strongly-typed objects for Last.fm entities like artists, albums, and tracks, enhancing code reliability and developer productivity.
+- **Authentication Support**: Implements Last.fm's authentication protocols, enabling both authenticated and non-authenticated API requests.
+- **Scrobbling Capabilities**: Includes methods for scrobbling tracks to Last.fm, a core feature of the Last.fm service.
+- **Extensible Architecture**: Designed with extensibility in mind, allowing for easy updates as the Last.fm API evolves.
+- **Cross-Platform Compatibility**: Targets `.NET Standard 1.1`, ensuring broad compatibility across various .NET platforms.
+
 ## Contributing
 
-Input is always welcome! [Raise an issue on GitHub](https://github.com/inflatablefriends/lastfm/issues), or send a message to [the Gitter chatroom](https://gitter.im/inflatablefriends/lastfm) if you need help with the library. 
+Input is always welcome! [Raise an issue on GitHub](https://github.com/inflatablefriends/lastfm/issues), or send a message to [the Gitter chatroom](https://gitter.im/inflatablefriends/lastfm) if you need help with the library.
 
 If you're interested in contributing code or documentation, [this short introduction to the library](doc/contributing.md) will help you get started.
 
@@ -24,10 +40,21 @@ If you're interested in contributing code or documentation, [this short introduc
 
 ### Installing
 
-#### NuGet
+#### NuGet Package Manager
 
-Install [Inflatable.Lastfm](
-https://www.nuget.org/packages/Inflatable.Lastfm/) from NuGet.
+1. Open your project in Visual Studio.
+2. Right-click on your project in the Solution Explorer and select "Manage NuGet Packages".
+3. In the "Browse" tab, search for "Inflatable.Lastfm".
+4. Click on the package and select "Install".
+
+Alternatively, you can use the Package Manager Console:
+
+Install [Inflatable.Lastfm](https://www.nuget.org/packages/Inflatable.Lastfm/) from NuGet.
+
+#### .NET CLI
+
+For projects using the .NET CLI, use the following command:
+`dotnet add package Inflatable.Lastfm`
 
 #### NuGet - prerelease code
 
@@ -80,9 +107,20 @@ if (client.Auth.HasAuthenticated) {
 }
 ```
 
+### Troubleshooting
+
+#### Common Issues:
+
+1. **Authentication Failure:** Ensure that your API key and secret are correctly passed to `LastfmClient`. Also, verify your credentials with Last.fm.
+2. **Timeout Errors:** Increase the timeout in your HTTP client settings if you encounter long API response times.
+3. **Compatibility Problems:** Check the .NET Standard version compatibility with your project. Review the platform compatibility section for further guidance.
+4. **Rate Limiting Issues:** If you encounter frequent `429` errors, you may be exceeding Last.fm's rate limits. Implement appropriate delays between requests.
+
+For more detailed troubleshooting, please refer to the [Last.fm API documentation](https://www.last.fm/api) or open an issue on our [GitHub repository](https://github.com/inflatablefriends/lastfm/issues).
+
 ## Documentation
 
-- [Api method progress report](PROGRESS.md)
+- [API method progress report](PROGRESS.md)
 - [Contributing](doc/contributing.md)
 - [Scrobbling](doc/scrobbling.md)
 - [Dependency Injection](doc/dependency-injection.md)
@@ -90,7 +128,7 @@ if (client.Auth.HasAuthenticated) {
 
 ## Platform Compatibility
 
-The main package targets ```netstandard1.1```. Development is on the ```master``` branch.
+The main package targets `netstandard1.1`. Development is on the `master` branch.
 
 ### Dependencies
 
